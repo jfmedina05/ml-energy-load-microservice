@@ -1,0 +1,19 @@
+openapi: 3.0.3
+info:
+  version: '0.1'
+  title: Hello World
+  description: Introducing open api 3.0.3
+
+paths:
+  /hello:
+    get:
+      tags:
+        - hello
+      operationId: src.hello.hello_world
+      description: Returns hello world string
+      responses:
+        '200':
+          description: 'Success'
+  
+servers:
+  - url: 'http://localhost:8080/e222'
