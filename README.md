@@ -25,14 +25,14 @@ Using the energy efficiency dataset, this work describes the development of a pr
 - [x] README.md (project data and model documentation)
 
 ## Week 4
-- [ ] Model load test file (ipynb)
-- [ ] Model load test file (pdf)
-- [ ] Lab 4 description file (pdf)
-- [ ] Project Description (DOCX)
-- [ ] myFirstApp directory containing 
+- [x] Model load test file (ipynb)
+- [x] Model load test file (pdf)
+- [x] Lab 4 description file (pdf)
+- [x] Project Description (DOCX)
+- [x] myFirstApp directory containing 
     * server.py
     * master.yml
     * requirements.txt
     * src directory (containing hello.py)
-- [ ] Week 4 pre-lab document
-- [ ] README.md (lab details provided)
+- [x] Week 4 pre-lab document
+- [x] README.md (lab details provided)
