@@ -13,11 +13,11 @@ Using the heart disease model (UCI dataset), the work presented here describes t
 
 ## Week 2
 (Tailor this to your dataset information - delete this line)
-- [ ] Energy Efficiency data exploration and model development (ipynb)
-- [ ] Energy Efficiency data exploration and model development (pdf)
-- [ ] Model PKL file
+- [x] Energy Efficiency data exploration and model development (ipynb)
+- [x] Energy Efficiency data exploration and model development (pdf)
+- [x] Model PKL file
 - [ ] Project Description (DOCX)
-- [ ] Week 2 pre-lab document
+- [x] Week 2 pre-lab document
 - [ ] README.md (project data and model documentation)
 
 ## Week 4
