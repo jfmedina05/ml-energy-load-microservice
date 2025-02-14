@@ -11,17 +11,16 @@ Using the heart disease model (UCI dataset), the work presented here describes t
 - [x] E222_Lab2and3_S25_INITIALS (1).ipynb
 - [x] E222_Lab2and3_S25_INITIALS.ipynb - Colab.pdf
 - [x] rfr.pkl
-README.md
+- [x] README.md
  
 ## Week 1
 - [x] ML Refresh Activity (ipynb)
 - [x] Week 1 pre-lab document
 
 ## Week 2
-(Tailor this to your dataset information - delete this line)
-- [x] Energy Efficiency data exploration and model development (ipynb)
-- [x] Energy Efficiency data exploration and model development (pdf)
-- [x] Model PKL file
+- [x] E222_Lab2and3_S25_INITIALS (1).ipynb
+- [x] E222_Lab2and3_S25_INITIALS.ipynb - Colab.pdf
+- [x] rfr.pkl
 - [x] Project Description (DOCX)
 - [x] Week 2 pre-lab document
 - [x] README.md (project data and model documentation)
