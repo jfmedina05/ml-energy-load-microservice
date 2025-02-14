@@ -1,7 +1,6 @@
 # Project Overview
 ## Jaiden Medina
-(Tailor this to your dataset and model information - delete this line)
-Using the heart disease model (UCI dataset), the work presented here describes the development of a predictive machine learning model to determine the likelihood of heart disease occurence in patients. A logistic classifier was selected, optimized, and exported to be used in as a cloud-based microservice. 
+Using the energy efficiency dataset, this work describes the development of a predictive machine learning model to estimate heating and cooling loads in buildings. A Random Forest regression model was used, optimized, and exported for deployment as a cloud-based microservice.
 
 # Project Repository Checklist
 - [x] .gitignore
