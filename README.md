@@ -1,5 +1,5 @@
 # Project Overview
-## Mary Loveless
+## Jaiden Medina
 (Tailor this to your dataset and model information - delete this line)
 Using the heart disease model (UCI dataset), the work presented here describes the development of a predictive machine learning model to determine the likelihood of heart disease occurence in patients. A logistic classifier was selected, optimized, and exported to be used in as a cloud-based microservice. 
 
