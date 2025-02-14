@@ -5,8 +5,8 @@ Using the heart disease model (UCI dataset), the work presented here describes t
 
 # Project Repository Checklist
 (put an x in the box when it is completed - update throughout the semester - delete this line)
-- [ ] .gitignore
-- [ ] updated README.md
+- [x] .gitignore
+- [x] updated README.md
 
 ## Week 1
 - [x] ML Refresh Activity (ipynb)
