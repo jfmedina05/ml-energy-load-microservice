@@ -16,9 +16,9 @@ Using the heart disease model (UCI dataset), the work presented here describes t
 - [x] Energy Efficiency data exploration and model development (ipynb)
 - [x] Energy Efficiency data exploration and model development (pdf)
 - [x] Model PKL file
-- [ ] Project Description (DOCX)
+- [x] Project Description (DOCX)
 - [x] Week 2 pre-lab document
-- [ ] README.md (project data and model documentation)
+- [x] README.md (project data and model documentation)
 
 ## Week 4
 - [ ] Model load test file (ipynb)
