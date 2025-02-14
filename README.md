@@ -7,6 +7,12 @@ Using the heart disease model (UCI dataset), the work presented here describes t
 - [x] .gitignore
 - [x] updated README.md
 
+## Model Development
+ Mushroom_Model (1).ipynb
+ Mushroom_Model- Colab.pdf
+ README.md
+ my_saved_mushroom_model.pkl
+ 
 ## Week 1
 - [x] ML Refresh Activity (ipynb)
 - [x] Week 1 pre-lab document
