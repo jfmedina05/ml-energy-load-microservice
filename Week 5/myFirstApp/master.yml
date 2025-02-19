@@ -1,0 +1,105 @@
+openapi: 3.0.3
+info:
+  version: '0.1'
+  title: Hello World
+  description: Introducing open api 3.0.3
+
+paths:
+  /hello:
+    get:
+      tags:
+        - Demo
+      operationId: src.hello.hello_world
+      description: Returns hello world string.
+      responses:
+        '200':
+          description: 'Success'
+  /sum/{arg1}/{arg2}:
+    get:
+      tags:
+        - Demo
+      operationId: src.sum.sum
+      description: Returns the sum of two numbers.
+      parameters:
+        - in: path
+          name: arg1
+          schema:
+            type: integer
+          required: true
+          description: First integer to sum
+        - in: path
+          name: arg2
+          schema:
+            type: integer
+          required: true
+          description: Second integer to sum 
+      responses:
+        '200':
+          description: 'Success'
+  
+  /file:
+    post:
+      tags:
+        - File
+      summary: Upload a file
+      operationId: src.file.upload
+      parameters:
+        - name: filename
+          in: query
+          description: filename to be uploaded
+          required: true
+          schema:
+            type: string
+      responses:
+        '405':
+          description: Invalid input
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+  
+  /list:
+    get:
+      tags:
+        - File
+      operationId: src.file.list_files
+      description: Returns the list of files in the server
+      responses:
+        '200':
+          description: 'Success'
+  
+  /readfile:
+    get:
+      tags:
+        - File
+      summary: Read a file
+      operationId : src.file.txtfile
+      parameters:
+        - name: filename
+          in: query
+          description: reading text  from file
+          required: true
+          schema:
+            type: string
+      responses:
+        '405':
+          description: Invalid input
+   
+  /model_info:
+    get:
+      tags:
+        - Model
+      operationId: src.model.model_info
+      description: Gives description of ML Model
+      responses:
+        '200':
+          description: 'Success'
+  
+
+servers:
+  - url: 'http://localhost:8080/e222'
