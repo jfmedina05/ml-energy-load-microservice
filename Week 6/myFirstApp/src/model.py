@@ -8,7 +8,7 @@ import pandas as pd
 
 # This function returns a string with model information.
 def model_info():
-    return 'This service uses a random forest classifier. There are 20 estimators with a maximum depth of 4.'
+    return 'This service uses a random forest regressor.'
 
 UPLOAD_FOLDER = '.'
 
@@ -50,9 +50,9 @@ def file_predict():
         #if not filename:
         #    return jsonify({"error": "Invalid input"}), 405
 
-        my_model = load('my_save_mdl.pkl')
+        my_model = load('rfr.pkl')
         name = upload('file') #this is the name of the object in the request body
-        test_data = pd.read_csv(name, index_col =[0])
+        test_data = pd.read_csv(name, index_col =False)
         test_np = test_data.to_numpy()
         pred = my_model.predict(test_np)
         pred_list = pred.tolist()
@@ -76,10 +76,10 @@ def model_accuracy():
         name_x = upload('file_x') #this is the name of the object in the request body
         name_y = upload('file_y') #this is the name of the object in the request body
         
-        my_model = load('my_save_mdl.pkl')
-        x_test = pd.read_csv(name_x, index_col=[0])
+        my_model = load('rfr.pkl')
+        x_test = pd.read_csv(name_x, index_col= False)
         x_test_np = x_test.to_numpy()
-        y_test = pd.read_csv(name_y, index_col=[0])
+        y_test = pd.read_csv(name_y, index_col= False)
         y_test_np = y_test.to_numpy()
         
         accuracy = my_model.score(x_test_np, y_test_np)
@@ -100,8 +100,8 @@ def predict_only(filename):
         if not filename:
             return jsonify({"error": "Invalid input"}), 405
         
-        my_model = load('my_save_mdl.pkl')
-        test_data = pd.read_csv(name, index_col =[0])
+        my_model = load('rfr.pkl')
+        test_data = pd.read_csv(name, index_col = False)
         test_np = test_data.to_numpy()
         pred = my_model.predict(test_np)
         pred_list = pred.tolist()
