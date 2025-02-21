@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   version: '0.1'
-  title: Hello World
+  title: Energy Efficiecy Prediction of Heating and Cooling Loads
   description: Introducing open api 3.0.3
 
 paths:
@@ -95,11 +95,82 @@ paths:
       tags:
         - Model
       operationId: src.model.model_info
-      description: Gives description of ML Model
+      description: Give info for ML model
       responses:
         '200':
           description: 'Success'
-  
 
+  /prediction:
+    post:
+      tags:
+        - Model
+      summary: Will ouput a prediction from a inputted .csv file 
+      operationId: src.model.file_predict
+      request body:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '405':
+          description: Invalid input
+
+  /predictiononly:
+    get:
+      tags:
+        - Model
+      summary: Prediction from an already uploaded data file
+      operationId: src.model.predict_only
+      parameters:
+        - name: filename
+          in: query
+          description: name of file present on server
+          required: true
+          schema:
+            type: string
+      responses:
+        '405':
+          description: Invalid input
+
+  /performance:
+    post:
+      tags:
+        - Model
+      summary: Generates the accuracy of the model given test data, features (X) and labels (Y) files
+      operationID: src.model.model_accuracy
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file_x:
+                  type: string
+                  format: binary
+                  description: Feature (X) file to upload
+                file_y:
+                  type: string
+                  format: binary
+                  description: Label (Y) file to upload
+      responses:
+        '200':
+          description: 'Success'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accuracy:
+                    type: number
+                    format: float
+                    description: The accuracy of the model
+        '400':
+          description: 'Invalid input'
+
+ 
 servers:
   - url: 'http://localhost:8080/e222'

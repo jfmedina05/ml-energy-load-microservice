@@ -91,6 +91,31 @@ paths:
           description: Invalid input
    
   
+  /prediction:
+    post:
+      tags:
+        - Model
+      summary: Will ouput a prediction from a inputted .csv file 
+      operationId: src.file.upload
+      parameters:
+        - name: filename
+          in: query
+          description: filename to be uploaded
+          required: true
+          schema:
+            type: string
+      responses:
+        '405':
+          description: Invalid input
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
 
 servers:
   - url: 'http://localhost:8080/e222'
