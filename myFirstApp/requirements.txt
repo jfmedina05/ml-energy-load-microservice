@@ -1,7 +1,0 @@
-Flask
-connexion[flask,swagger-ui,uvicorn]
-scikit-learn
-matplotlib
-joblib
-pandas
-seaborn
