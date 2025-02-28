@@ -14,10 +14,10 @@ app.add_api("master.yml")
 # create a URL route in our application for "/"
 @app.route("/")
 def home():
-    return(render_template('index.html'))
-#def home():
-#    msg = {"msg": "It's working!"}
-#    return jsonify(msg)
+    return (render_template('hello_template.html'))
+def home():
+    msg = {"msg": "It's working!"}
+    return jsonify(msg)
 
 @app.route("/html/<page>")
 def html_hello(page):
