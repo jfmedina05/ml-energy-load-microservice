@@ -110,4 +110,19 @@ def predict_only(filename):
     except KeyError as e:
         return jsonify({"error": str(e)}), 400
 
+def html(filename):
+    try:
+        name = request.args.get('filename')
+        if not name:
+            return jsonify({"error": "Invalid Input"}), 405
+        test_data = pd.read_csv(name, index_col=[0])
+        plot = test_data.plot(kind='hist').get_figure()
+        plot_path = os.path.join('static', 'image', 'plot.png')
+        plot.savefig(plot_path)
+        return render_template('new.html')
+    except FileNotFoundError:
+        return jsonify({"error": "File not found"}), 404
+#NEW 2/28
+def html_hello():
+    reutnr render_template("Hello_template.html")
         
