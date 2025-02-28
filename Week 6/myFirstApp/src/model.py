@@ -30,11 +30,11 @@ def upload(file_key):
 #It looks at the request body (file key) to the get contents and names
 # it whatever the query parameter was (filename). Note this function
 # requires a post with a query parameter and multipart/form data in the request body
-def upload_old(filename):
-    f = request.files[file_key]
-    filename = f.filename
-    f.save(filename)
-    return filename
+#def upload_old(filename):
+    #f = request.files[file_key]
+    #filename = f.filename
+    #f.save(filename)
+    #return filename
 
 #This function will load a model in the app directory, read in the csv
 #test data provided by the upload and return a jsonified list of 
@@ -122,7 +122,7 @@ def html(filename):
         return render_template('new.html')
     except FileNotFoundError:
         return jsonify({"error": "File not found"}), 404
-#NEW 2/28
+
 def html_hello():
     return render_template("Hello_template.html")
         

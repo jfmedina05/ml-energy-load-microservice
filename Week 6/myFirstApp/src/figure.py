@@ -17,10 +17,10 @@ def upload(filename):
     return filename
 
 def gen_plot(name):
-   # my_model = load('logs_heart_mdl.pkl')
-    #name = upload(filename)
+    my_model = load('rfr.pkl')
+    name = request.args.get(name)
     # HARD CODED test in here so when I upload I must name my file test
-    test_data = pd.read_csv(name, index_col =[0])
+    test_data = pd.read_csv(name, index_col= False)
     test_data.plot(kind='hist').get_figure()
     bytes_image = io.BytesIO()
     plt.savefig(bytes_image, format = 'png')
@@ -29,14 +29,14 @@ def gen_plot(name):
 
 def disp_plot(name):
     plot = gen_plot(name)
-    #plot.savefig(os.path.join('static', 'images', 'plot.png'))
+    plot.savefig(os.path.join('static', 'images', 'plot_test.png'))
     #return render_template('test.html')
     return send_file(plot, mimetype='image/png')
 
 def html(name):
-    test_data = pd.read_csv(name, index_col =[0])
+    test_data = pd.read_csv(name, index_col = False)
     plot = test_data.plot(kind='hist').get_figure()
-    plot.savefig(os.path.join('static', 'images', 'plot.png'))
+    plot.savefig(os.path.join('static', 'images', 'plot_test.png'))
     return render_template('new.html')
 
 def html_hello():

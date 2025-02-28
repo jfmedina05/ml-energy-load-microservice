@@ -179,7 +179,7 @@ paths:
       operationId: src.figure.disp_plot
       description: Returns a histogram of the data file.
       parameters:
-        - name: filename
+        - name: name
           in: query
           description: Name of file present on server.
           required: true
@@ -211,7 +211,7 @@ paths:
       operationId: src.figure.html
       description: Returns html that displays a figure (new.html)
       parameters:
-        - name: filename
+        - name: name
           in: query
           description: name of file present on server
           required: true
