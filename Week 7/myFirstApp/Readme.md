@@ -1,4 +1,4 @@
-# Week 06 Lab: More on Customizing APIs
+# Week 06/07 Lab: More on Customizing APIs
 
 
 **The goals of this lab are:**  
@@ -44,4 +44,18 @@ In this section, you will work to create your own endpoints for your service. Th
     * No function has been created to do this. You will need to either create a new py file OR include it in the model.py script (recommended).
     * Note, you do not have to do it EXACTLY how I did it. I did not specify if it had to be a GET/POST.
 
+4. /figure endpoint
+    * Create a /figure endpoint that provides a histogram that was created from the test data
+    * This histogram will be available within your service, not in another tab
+
+5. /html enpoint
+    * Create a /html endpoint that will show the histogram provided from the /figure endpoint
+    * This figure will be shown in a seperate tab provided in the Week 7 Prelab
+
+6. myMLAppV1
+    * This folder contains all of the relevant files for the ML App
+    * The files contained in this folder are:
+      1. src folder and its content
+      2. requirements.txt
+      3. master.yml
 
