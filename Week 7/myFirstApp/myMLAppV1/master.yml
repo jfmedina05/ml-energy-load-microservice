@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   version: '0.1'
-  title: Heart Disease Classification
+  title: Energy Efficiency Regression
   description: Introducing open api 3.0.3
 
 paths:
@@ -177,11 +177,11 @@ paths:
       tags:
         - Figure
       operationId: src.figure.disp_plot
-      description: Returns a histogram of the data file
+      description: Returns a histogram of the data file.
       parameters:
-        - name: filename
+        - name: name
           in: query
-          description: name of file present on server
+          description: Name of file present on server.
           required: true
           schema:
             type: string
@@ -194,7 +194,7 @@ paths:
                 type: string
                 format: binary
         '400':
-          description: 'Bad Request'
+          description: 'Invalid input'
           content:
             application/json:
               schema:
@@ -202,9 +202,8 @@ paths:
                 properties:
                   error:
                     type: string
-                    example: "Invalid input"
- 
-  
+                    example: "Invalid input: file not found or unsupported format"
+
   /html:
     get:
       tags:
@@ -212,7 +211,7 @@ paths:
       operationId: src.figure.html
       description: Returns html that displays a figure (new.html)
       parameters:
-        - name: filename
+        - name: name
           in: query
           description: name of file present on server
           required: true
@@ -223,14 +222,15 @@ paths:
           description: 'Success'
 
   /hello_html:
-      get:
-        tags:
-          - Demo
-        operationId: src.figure.html_hello
-        description: Returns hello world string inside HTML template
-        responses:
-          '200':
-            description: 'Success'
+    get:
+      tags:
+        - Demo
+      operationId: src.figure.html_hello
+      description: Returns hello world string inside HTML template
+      responses:
+        '200':
+          description: 'Success'
+
 
 servers:
   - url: 'http://localhost:8080/e222'

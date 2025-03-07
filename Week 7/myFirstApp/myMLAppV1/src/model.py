@@ -8,7 +8,7 @@ import pandas as pd
 
 # This function returns a string with model information.
 def model_info():
-    return 'This service uses a random forest classifier. There are 20 estimators with a maximum depth of 4.'
+    return 'This service uses a random forest regressor.'
 
 UPLOAD_FOLDER = '.'
 
@@ -30,11 +30,11 @@ def upload(file_key):
 #It looks at the request body (file key) to the get contents and names
 # it whatever the query parameter was (filename). Note this function
 # requires a post with a query parameter and multipart/form data in the request body
-def upload_old(filename):
-    f = request.files[file_key]
-    filename = f.filename
-    f.save(filename)
-    return filename
+#def upload_old(filename):
+    #f = request.files[file_key]
+    #filename = f.filename
+    #f.save(filename)
+    #return filename
 
 #This function will load a model in the app directory, read in the csv
 #test data provided by the upload and return a jsonified list of 
@@ -50,9 +50,9 @@ def file_predict():
         #if not filename:
         #    return jsonify({"error": "Invalid input"}), 405
 
-        my_model = load('my_save_mdl.pkl')
+        my_model = load('rfr.pkl')
         name = upload('file') #this is the name of the object in the request body
-        test_data = pd.read_csv(name, index_col =[0])
+        test_data = pd.read_csv(name, index_col =False)
         test_np = test_data.to_numpy()
         pred = my_model.predict(test_np)
         pred_list = pred.tolist()
@@ -76,10 +76,10 @@ def model_accuracy():
         name_x = upload('file_x') #this is the name of the object in the request body
         name_y = upload('file_y') #this is the name of the object in the request body
         
-        my_model = load('my_save_mdl.pkl')
-        x_test = pd.read_csv(name_x, index_col=[0])
+        my_model = load('rfr.pkl')
+        x_test = pd.read_csv(name_x, index_col= False)
         x_test_np = x_test.to_numpy()
-        y_test = pd.read_csv(name_y, index_col=[0])
+        y_test = pd.read_csv(name_y, index_col= False)
         y_test_np = y_test.to_numpy()
         
         accuracy = my_model.score(x_test_np, y_test_np)
@@ -100,8 +100,8 @@ def predict_only(filename):
         if not filename:
             return jsonify({"error": "Invalid input"}), 405
         
-        my_model = load('my_save_mdl.pkl')
-        test_data = pd.read_csv(name, index_col =[0])
+        my_model = load('rfr.pkl')
+        test_data = pd.read_csv(name, index_col = False)
         test_np = test_data.to_numpy()
         pred = my_model.predict(test_np)
         pred_list = pred.tolist()
@@ -110,4 +110,19 @@ def predict_only(filename):
     except KeyError as e:
         return jsonify({"error": str(e)}), 400
 
+def html(filename):
+    try:
+        name = request.args.get('filename')
+        if not name:
+            return jsonify({"error": "Invalid Input"}), 405
+        test_data = pd.read_csv(name, index_col= False)
+        plot = test_data.plot(kind='hist').get_figure()
+        plot_path = os.path.join('static', 'image', 'plot.png')
+        plot.savefig(plot_path)
+        return render_template('new.html')
+    except FileNotFoundError:
+        return jsonify({"error": "File not found"}), 404
+
+def html_hello():
+    return render_template("Hello_template.html")
         
