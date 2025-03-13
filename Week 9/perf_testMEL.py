@@ -4,12 +4,12 @@ import os               # for local path management
 
 # file to upload
 dir_path = os.getcwd()
-filename = 'my_testdata.csv'
+filename = 'X_test.csv'
 file_path = os.path.join(dir_path, filename)        
 
 # service hosted ip
-#http://149.165.155.241:8080/e222/
-HOST_IP = "149.165.155.241"
+#http://149.165.154.215:8080/e222/
+HOST_IP = "149.165.154.215"
 
 # get the total number of requests
 n_requests = int(input("Number of requests: "))
@@ -48,13 +48,13 @@ for i in range(0, n_requests):
     response = requests.get('http://' + HOST_IP + ':8080/e222/model_info')
     
     #After, uploading a dataset, test the performance of my model to provide predictions only
-    #response = requests.get('http://149.165.155.241:8080/e222/prediction?filename=my_testdata.csv')
+    response = requests.get('http://149.165.154.215:8080/e222/prediction?filename=X_test.csv')
     
     #Test the performance of the upload/predict operation
-    #url = 'http://149.165.155.241:8080/e222/prediction'
-    #headers = {'accept': '*/*', 'Content-Type': 'multipart/form-data'}
-    #files = {'file': ('my_testdata.csv', open('myFirstApp/my_testdata.csv', 'rb'), 'text/csv')}
-    #response = requests.post(url, headers=headers, files=files)
+    url = 'http://149.165.154.215:8080/e222/prediction'
+    headers = {'accept': '*/*', 'Content-Type': 'multipart/form-data'}
+    files = {'file': ('X_test.csv', open('myFirstApp/X_test.csv', 'rb'), 'text/csv')}
+    response = requests.post(url, headers=headers, files=files)
 
    
        
