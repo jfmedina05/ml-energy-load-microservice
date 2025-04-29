@@ -50,7 +50,7 @@ def file_predict():
         #if not filename:
         #    return jsonify({"error": "Invalid input"}), 405
 
-        my_model = load('rfr.pkl')
+        my_model = load('rfr_2.pkl')
         name = upload('file') #this is the name of the object in the request body
         test_data = pd.read_csv(name, index_col =False)
         test_np = test_data.to_numpy()
@@ -76,7 +76,7 @@ def model_accuracy():
         name_x = upload('file_x') #this is the name of the object in the request body
         name_y = upload('file_y') #this is the name of the object in the request body
         
-        my_model = load('rfr.pkl')
+        my_model = load('rfr_2.pkl')
         x_test = pd.read_csv(name_x, index_col= False)
         x_test_np = x_test.to_numpy()
         y_test = pd.read_csv(name_y, index_col= False)
@@ -100,7 +100,7 @@ def predict_only(filename):
         if not filename:
             return jsonify({"error": "Invalid input"}), 405
         
-        my_model = load('rfr.pkl')
+        my_model = load('rfr_2.pkl')
         test_data = pd.read_csv(name, index_col = False)
         test_np = test_data.to_numpy()
         pred = my_model.predict(test_np)
