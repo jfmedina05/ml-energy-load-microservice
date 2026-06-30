@@ -1,5 +1,25 @@
 # ML Energy Load Microservice
 
+<p align="center">
+  <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white">
+  <img alt="pandas" src="https://img.shields.io/badge/pandas-150458?logo=pandas&logoColor=white">
+  <img alt="NumPy" src="https://img.shields.io/badge/NumPy-013243?logo=numpy&logoColor=white">
+  <img alt="scikit-learn" src="https://img.shields.io/badge/scikit--learn-F7931E?logo=scikitlearn&logoColor=white">
+  <img alt="Matplotlib" src="https://img.shields.io/badge/Matplotlib-11557C?logo=python&logoColor=white">
+  <img alt="Random Forest" src="https://img.shields.io/badge/Random%20Forest-Regression-228B22?logoColor=white">
+  <img alt="Flask" src="https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white">
+  <img alt="REST API" src="https://img.shields.io/badge/REST%20API-Microservice-2C8EBB?logoColor=white">
+  <img alt="Swagger" src="https://img.shields.io/badge/Swagger%20%2F%20OpenAPI-85EA2D?logo=swagger&logoColor=black">
+  <img alt="YAML" src="https://img.shields.io/badge/YAML-CB171E?logo=yaml&logoColor=white">
+  <img alt="Ubuntu" src="https://img.shields.io/badge/Ubuntu%2024.04-E95420?logo=ubuntu&logoColor=white">
+  <img alt="Linux VM" src="https://img.shields.io/badge/Linux%20VM-Cloud%20Deployment-FCC624?logo=linux&logoColor=black">
+  <img alt="Jetstream2" src="https://img.shields.io/badge/Jetstream2-Cloud%20Infrastructure-4B0082?logoColor=white">
+  <img alt="Google Colab" src="https://img.shields.io/badge/Google%20Colab-F9AB00?logo=googlecolab&logoColor=white">
+  <img alt="Jupyter Notebook" src="https://img.shields.io/badge/Jupyter%20Notebook-F37626?logo=jupyter&logoColor=white">
+  <img alt="GitHub" src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white">
+  <img alt="Markdown" src="https://img.shields.io/badge/Markdown-000000?logo=markdown&logoColor=white">
+</p>
+
 A cloud-deployed machine learning microservice for predicting building heating and cooling loads using a Random Forest regression model. This project combines model development, REST API design, cloud deployment, and performance evaluation into an end-to-end intelligent systems application.
 
 ---
